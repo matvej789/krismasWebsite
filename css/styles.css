@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+#animated-text {
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+}
+
 h2 {
   margin: 0;
 }
@@ -11,7 +17,7 @@ ul {
   margin: 0;
 }
 body {
-  background-image: url('/krismasWebsite/imgonline-com-ua-TextureSeamless-tdADSwfb1d\ \(2\).jpg');
+  background-image: url('/imgonline-com-ua-TextureSeamless-tdADSwfb1d\ \(2\).jpg');
   background-repeat: repeat;
   background-size: auto;
   background-position: top left;
@@ -19,8 +25,9 @@ body {
   line-height: 1.6;
   background-color: rgb(214, 213, 213);
 }
+
 .wrap {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 5px;
 }
@@ -37,8 +44,6 @@ body {
 
 .video-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 0;
 }
 
@@ -50,13 +55,110 @@ video {
   margin: 0;
 }
 
+.video-wrapper {
+  max-width: 600px;
+}
+
+.video-player {
+  width: 100%; /* Растягиваем видео */
+  height: auto; /* Адаптивная высота */
+  border: 2px solid #ddd; /* Рамка вокруг видео */
+  border-radius: 10px; /* Скруглённые углы */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень */
+}
+
+.text-animation {
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  color: #222;
+  white-space: nowrap;
+  text-align: center;
+  position: relative;
+}
+
+.text-animation p {
+  margin: 0;
+  text-align: left;
+}
+
+.text-animation {
+  font-size: 2.5rem;
+}
+
+.static-text {
+  color: #d42121;
+  font-weight: bold;
+}
+
+.static-space {
+  display: inline-block;
+  width: 4px;
+}
+
+#animated-text {
+  display: inline-block;
+  text-align: left;
+  color: #000;
+  border-right: 4px solid #d42121;
+  line-height: 1.2;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #ff4500;
+  }
+}
+
+@media (max-width: 1100px) {
+  .text-animation {
+    text-align: center; /* Выравниваем текст по центру */
+    margin-bottom: 20px;
+  }
+  .static-text {
+    font-size: 2rem;
+  }
+
+  #animated-text {
+    font-size: 2rem; /* Уменьшаем размер текста */
+  }
+
+  .video-player {
+    max-width: 100%; /* Видео занимает всю ширину экрана */
+  }
+}
+
+@media (max-width: 420px) {
+  .static-text {
+    font-size: 1.4rem;
+  }
+
+  #animated-text {
+    font-size: 1.4rem; /* Уменьшаем размер текста */
+  }
+
+  .section h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 22px;
+  }
+
+  .nav-ul li a {
+    font-size: 18px;
+  }
+}
+
 .custom-bullets {
   list-style: none;
   padding: 0;
 }
 
 .custom-bullets li {
-  background: url('/krismasWebsite/check_17134877.png') no-repeat left center;
+  background: url('/check_17134877.png') no-repeat left center;
   padding-left: 30px;
   margin-bottom: 10px;
 }
@@ -131,18 +233,6 @@ video {
   text-decoration: underline;
 }
 
-@media (max-width: 412px) {
-  .section h2 {
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 22px;
-  }
-
-  .nav-ul li a {
-    font-size: 18px;
-  }
-}
-
 .section {
   margin-bottom: 30px;
   background-color: #e5ebea;
@@ -156,6 +246,75 @@ video {
   margin-bottom: 25px;
   font-size: 30px;
   color: #b2280d;
+}
+
+.content-container {
+  display: flex;
+  justify-content: flex-start; /* Выравниваем элементы по горизонтали */
+  align-items: flex-start; /* Выравниваем элементы по вертикали */
+  margin-top: 20px;
+  gap: 20px; /* Задаём расстояние между текстом и каруселью */
+}
+
+/* Блок с текстом */
+.text-block {
+  flex: 1;  /* Текст будет занимать всю доступную ширину, кроме того, что отведено для карусели */
+  padding-right: 20px;  /* Отступ справа для того, чтобы не было прижато к карусели */
+}
+
+/* Карусель справа от текста */
+.carousel-container {
+  width: 35%;  /* Карусель будет занимать 35% от доступной ширины */
+  display: flex;
+  justify-content: center; /* Выравнивание карусели по центру контейнера */
+}
+/* Стиль для контейнера каруселей */
+.carousel {
+  display: flex;
+  overflow: hidden;
+  width: 350px;
+  margin-left: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Для мобильной версии: объединяем все карусели в одну */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column; /* Для мобильных устройств делаем колонку */
+    gap: 20px;  /* Меньшее расстояние между блоками */
+  }
+
+  .text-block, .carousel-container {
+    width: 100%; /* Каждый блок занимает 100% ширины */
+  }
+
+  .carousel-container {
+    margin-left: 0; /* Убираем отступ слева */
+  }
+}
+
+/* Для маленьких экранов (мобильные устройства) */
+@media (max-width: 412px) {
+  .carousel {
+    width: 100%; /* Карусель занимает всю ширину на очень маленьких экранах */
+    margin-left: 0;
+  }
 }
 
 .btn {
@@ -323,5 +482,97 @@ footer {
     text-align: center;
     margin-bottom: 10px;
     font-size: 25px;
+  }
+}
+
+.promo-block {
+  background: linear-gradient(145deg, #ffe4e1, #ffcccb);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  opacity: 0; /* Скрыто по умолчанию */
+  transform: scale(0.8) translateY(50px); /* Уменьшено и смещено вниз */
+  transition: all 1s ease-in-out; /* Плавный эффект */
+}
+
+.promo-block.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0); /* Показываем с масштабированием */
+}
+
+.promo-title {
+  font-size: 2.2rem;
+  text-align: center;
+  color: #ff4500; /* Яркий оранжевый */
+  font-weight: bold;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4); /* Эффект тени */
+  animation: shake 2s infinite; /* Эффект тряски */
+}
+
+/* Анимация тряски */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-3px);
+  }
+  20% {
+    transform: translateX(3px);
+  }
+  30% {
+    transform: translateX(-2px);
+  }
+  40% {
+    transform: translateX(2px);
+  }
+}
+
+.custom-bullets1 {
+  list-style: none;
+  padding: 0;
+}
+
+.custom-bullets1 li {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: #444;
+  opacity: 0;
+  transform: translateY(50px) rotate(-10deg);
+  animation: advancedFadeIn 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.custom-bullets1 li:nth-child(1) {
+  animation-delay: 1.2s;
+}
+
+.custom-bullets1 li:nth-child(2) {
+  animation-delay: 1.6s;
+}
+
+.custom-bullets1 li:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.custom-bullets1 .highlight {
+  color: #d42121; /* Яркий красный */
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes advancedFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) rotate(-10deg) scale(0.9);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-10px) rotate(5deg) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0) scale(1);
   }
 }
