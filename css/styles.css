@@ -17,7 +17,7 @@ ul {
   margin: 0;
 }
 body {
-  background-image: url('/krismasWebsite/imgonline-com-ua-TextureSeamless-tdADSwfb1d\ \(2\).jpg');
+  background-image: url('/imgonline-com-ua-TextureSeamless-tdADSwfb1d\ \(2\).jpg');
   background-repeat: repeat;
   background-size: auto;
   background-position: top left;
@@ -60,11 +60,11 @@ video {
 }
 
 .video-player {
-  width: 100%; /* Растягиваем видео */
-  height: auto; /* Адаптивная высота */
-  border: 2px solid #ddd; /* Рамка вокруг видео */
-  border-radius: 10px; /* Скруглённые углы */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень */
+  width: 100%;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .text-animation {
@@ -116,7 +116,7 @@ video {
 
 @media (max-width: 1100px) {
   .text-animation {
-    text-align: center; /* Выравниваем текст по центру */
+    text-align: center;
     margin-bottom: 20px;
   }
   .static-text {
@@ -124,11 +124,11 @@ video {
   }
 
   #animated-text {
-    font-size: 2rem; /* Уменьшаем размер текста */
+    font-size: 2rem;
   }
 
   .video-player {
-    max-width: 100%; /* Видео занимает всю ширину экрана */
+    max-width: 100%;
   }
 }
 
@@ -138,7 +138,7 @@ video {
   }
 
   #animated-text {
-    font-size: 1.4rem; /* Уменьшаем размер текста */
+    font-size: 1.4rem;
   }
 
   .section h2 {
@@ -158,7 +158,7 @@ video {
 }
 
 .custom-bullets li {
-  background: url('/krismasWebsite/check_17134877.png') no-repeat left center;
+  background: url('/check_17134877.png') no-repeat left center;
   padding-left: 30px;
   margin-bottom: 10px;
 }
@@ -207,7 +207,7 @@ video {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ad1d1b;
+  background-color: #801311;
   border-top: 2px solid rgba(224, 210, 210, 0.253);
   border-bottom: 2px solid rgba(224, 210, 210, 0.253);
   margin-bottom: 20px;
@@ -250,25 +250,23 @@ video {
 
 .content-container {
   display: flex;
-  justify-content: flex-start; /* Выравниваем элементы по горизонтали */
-  align-items: flex-start; /* Выравниваем элементы по вертикали */
+  justify-content: flex-start;
+  align-items: flex-start;
   margin-top: 20px;
-  gap: 20px; /* Задаём расстояние между текстом и каруселью */
+  gap: 20px;
 }
 
-/* Блок с текстом */
 .text-block {
-  flex: 1;  /* Текст будет занимать всю доступную ширину, кроме того, что отведено для карусели */
-  padding-right: 20px;  /* Отступ справа для того, чтобы не было прижато к карусели */
+  flex: 1;
+  padding-right: 20px;
 }
 
-/* Карусель справа от текста */
 .carousel-container {
-  width: 35%;  /* Карусель будет занимать 35% от доступной ширины */
+  width: 35%;
   display: flex;
-  justify-content: center; /* Выравнивание карусели по центру контейнера */
+  justify-content: center;
 }
-/* Стиль для контейнера каруселей */
+
 .carousel {
   display: flex;
   overflow: hidden;
@@ -293,26 +291,25 @@ video {
   border-radius: 10px;
 }
 
-/* Для мобильной версии: объединяем все карусели в одну */
+
 @media (max-width: 768px) {
   .content-container {
-    flex-direction: column; /* Для мобильных устройств делаем колонку */
-    gap: 20px;  /* Меньшее расстояние между блоками */
+    flex-direction: column;
+    gap: 20px;
   }
 
   .text-block, .carousel-container {
-    width: 100%; /* Каждый блок занимает 100% ширины */
+    width: 100%;
   }
 
   .carousel-container {
-    margin-left: 0; /* Убираем отступ слева */
+    margin-left: 0;
   }
 }
 
-/* Для маленьких экранов (мобильные устройства) */
 @media (max-width: 412px) {
   .carousel {
-    width: 100%; /* Карусель занимает всю ширину на очень маленьких экранах */
+    width: 100%;
     margin-left: 0;
   }
 }
@@ -437,7 +434,7 @@ footer {
   margin-top: 20px;
 }
 
-@media (max-width: 630px) {
+@media (max-width: 700px) {
   .header {
     flex-direction: column;
     gap: 20px;
@@ -492,26 +489,25 @@ footer {
   padding: 20px;
   max-width: 600px;
   margin: 20px auto;
-  opacity: 0; /* Скрыто по умолчанию */
-  transform: scale(0.8) translateY(50px); /* Уменьшено и смещено вниз */
-  transition: all 1s ease-in-out; /* Плавный эффект */
+  opacity: 0;
+  transform: scale(0.8) translateY(50px);
+  transition: all 1s ease-in-out;
 }
 
 .promo-block.visible {
   opacity: 1;
-  transform: scale(1) translateY(0); /* Показываем с масштабированием */
+  transform: scale(1) translateY(0);
 }
 
 .promo-title {
   font-size: 2.2rem;
   text-align: center;
-  color: #ff4500; /* Яркий оранжевый */
+  color: #ff4500;
   font-weight: bold;
-  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4); /* Эффект тени */
-  animation: shake 2s infinite; /* Эффект тряски */
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+  animation: shake 2s infinite;
 }
 
-/* Анимация тряски */
 @keyframes shake {
   0%, 100% {
     transform: translateX(0);
@@ -557,7 +553,7 @@ footer {
 }
 
 .custom-bullets1 .highlight {
-  color: #d42121; /* Яркий красный */
+  color: #d42121;
   font-weight: bold;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
@@ -574,5 +570,36 @@ footer {
   100% {
     opacity: 1;
     transform: translateY(0) rotate(0) scale(1);
+  }
+}
+.nav-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ad1d1b;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.nav-btn:hover {
+  background-color: #e64a19; /* Меняем цвет при наведении */
+  transform: scale(1.1); /* Эффект увеличения */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Усиленная тень */
+}
+
+@media screen and (max-width: 800px) {
+  .nav-ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-btn {
+    width: 100%;
+    text-align: center;
   }
 }

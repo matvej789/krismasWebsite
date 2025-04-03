@@ -1,15 +1,18 @@
 
 const measureModal = document.getElementById("measure-modal");
+const measureModal1 = document.getElementById("measure-modal");
 const callModal = document.getElementById("call-modal");
-const reviewModal = document.getElementById("review-modal");
+const callModal1 = document.getElementById("call-modal");
 
 const orderMeasureBtn = document.getElementById("order-measure");
+const orderMeasureBtn1 = document.getElementById("order-measure1");
 const orderCallBtn = document.getElementById("order-call");
-const leaveReviewBtn = document.getElementById("leave-review");
+const orderCallBtn1 = document.getElementById("order-call1");
 
 const closeMeasureModalBtn = document.getElementById("close-measure-modal");
+const closeMeasureModalBtn1 = document.getElementById("close-measure-modal1");
 const closeCallModalBtn = document.getElementById("close-call-modal");
-const closeReviewModalBtn = document.getElementById("close-review-modal");
+const closeCallModalBtn1 = document.getElementById("close-call-modal1");
 
 const surveyModal = document.getElementById("survey-modal");
 const openSurveyBtn = document.getElementById("open-survey-btn");
@@ -27,15 +30,23 @@ orderMeasureBtn.addEventListener("click", () => {
   measureModal.classList.add("show");
 });
 
+orderMeasureBtn1.addEventListener("click", () => {
+  measureModal.classList.add("show");
+});
+
 orderCallBtn.addEventListener("click", () => {
   callModal.classList.add("show");
 });
 
-leaveReviewBtn.addEventListener("click", () => {
-  reviewModal.classList.add("show");
+orderCallBtn1.addEventListener("click", () => {
+  callModal.classList.add("show");
 });
 
 closeMeasureModalBtn.addEventListener("click", () => {
+  measureModal.classList.remove("show");
+});
+
+closeMeasureModalBtn1.addEventListener("click", () => {
   measureModal.classList.remove("show");
 });
 
@@ -43,8 +54,8 @@ closeCallModalBtn.addEventListener("click", () => {
   callModal.classList.remove("show");
 });
 
-closeReviewModalBtn.addEventListener("click", () => {
-  reviewModal.classList.remove("show");
+closeCallModalBtn1.addEventListener("click", () => {
+  callModal.classList.remove("show");
 });
 
 window.addEventListener("click", (event) => {
@@ -53,9 +64,6 @@ window.addEventListener("click", (event) => {
   }
   if (event.target === callModal) {
     callModal.classList.remove("show");
-  }
-  if (event.target === reviewModal) {
-    reviewModal.classList.remove("show");
   }
   if (event.target === surveyModal) {
     surveyModal.classList.remove("show");
@@ -74,16 +82,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const firstSlide = items[0].cloneNode(true);
     wrapper.appendChild(firstSlide);
 
-    // Функция для перехода на следующий слайд
     function moveToNextSlide() {
-      index = (index + 1) % (totalItems + 1); // Зацикливаем индекс на дополнительном слайде
-      wrapper.style.transform = `translateX(-${index * 100}%)`; // Перемещаем карусель
+      index = (index + 1) % (totalItems + 1);
+      wrapper.style.transform = `translateX(-${index * 100}%)`;
     }
 
-    // Функция для плавного перехода обратно к первому слайду
     function resetTransition() {
-      wrapper.style.transition = 'none'; // Отключаем анимацию на момент возврата
-      wrapper.style.transform = `translateX(0)`; // Ставим в начальную позицию
+      wrapper.style.transition = 'none';
+      wrapper.style.transform = `translateX(0)`;
 
       setTimeout(() => {
         wrapper.style.transition = 'transform 0.5s ease-in-out';
@@ -108,8 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          promoBlock.classList.add('visible'); // Показываем блок
-          listItems.forEach(item => item.style.animationPlayState = 'running'); // Запускаем анимацию
+          promoBlock.classList.add('visible');
+          listItems.forEach(item => item.style.animationPlayState = 'running');
         }
       });
     }, { threshold: 0.2 });
@@ -134,17 +140,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!isDeleting && charIndex < currentWord.length) {
       charIndex++;
-      setTimeout(typeEffect, 140); // Скорость печатания
+      setTimeout(typeEffect, 140);
     } else if (isDeleting && charIndex > 0) {
       charIndex--;
-      setTimeout(typeEffect, 120); // Скорость стирания
+      setTimeout(typeEffect, 120);
     } else if (!isDeleting && charIndex === currentWord.length) {
       isDeleting = true;
-      setTimeout(typeEffect, 2000); // Пауза перед стиранием
+      setTimeout(typeEffect, 2000);
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false;
       wordIndex = (wordIndex + 1) % words.length;
-      setTimeout(typeEffect, 500); // Пауза перед началом нового слова
+      setTimeout(typeEffect, 500);
     }
   }
 
